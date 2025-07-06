@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="currentSongHeader">Mood-Based Music Player</header>
+
+    <div id="mood-container">
+        <h3>Detected Mood: <span id="detected-mood">None</span></h3>
+        <button onclick="fetchMood()">Detect Mood</button>
+    </div>
+
+    <div id="nowPlaying">
+        <img id="nowPlayingThumbnail" src="default.jpg" alt="Now Playing">
+        <h2 id="nowPlayingTitle">Select a Song</h2>
+        <p id="nowPlayingArtist"></p>
+    
+        <div id="audioControls">
+            <button onclick="togglePlayPause()">⏯</button>
+            <input type="range" id="progressBar" value="0" min="0" max="100" step="0.1">
+            <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+    
+            <!-- 🔊 Volume Control -->
+            <span id="volumeIcon">🔊</span>
+            <input type="range" id="volumeControl" min="0" max="100" value="100">
+        </div>
+    </div>
+    
+    <!-- Song List -->
+    <div id="musicPlayer">
+        <!-- <h3>Recommended Songs:</h3> -->
+        <ul id="songList"></ul>
+    </div>
+
+    <footer>© 2025 Mood Music Player | Inspired by Spotify</footer>
+
+    <audio id="audioPlayer"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
